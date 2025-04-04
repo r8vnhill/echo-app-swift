@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:echo-app-swift}",
+            "name": "Debug echo-app-swift",
+            "program": "${workspaceFolder:echo-app-swift}/.build/debug/echo-app-swift",
+            "preLaunchTask": "swift: Build Debug echo-app-swift"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:echo-app-swift}",
+            "name": "Release echo-app-swift",
+            "program": "${workspaceFolder:echo-app-swift}/.build/release/echo-app-swift",
+            "preLaunchTask": "swift: Build Release echo-app-swift"
+        }
+    ]
+}

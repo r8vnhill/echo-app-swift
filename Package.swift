@@ -5,10 +5,19 @@ import PackageDescription
 
 let package = Package(
     name: "echo-app-swift",
+    products: [
+        .executable(name: "App", targets: ["App"]),
+        .library(name: "Lib", targets: ["Lib"])
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+        .target(name: "Lib"),
         .executableTarget(
-            name: "echo-app-swift"),
+            name: "App",
+            dependencies: ["Lib"]
+        ),
+        .testTarget(
+            name: "LibTests",
+            dependencies: ["Lib"]
+        )
     ]
 )

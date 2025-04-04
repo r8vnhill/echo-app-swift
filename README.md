@@ -1,22 +1,34 @@
 # echo-app-swift
 
-This repository contains the source code for the lesson [**"Creating a Basic Project in Swift"**](https://dibs.pages.dev/docs/build-systems/init/swift), part of the course **Software Library Design and Implementation (Diseño e Implementación de Bibliotecas de Software, DIBS)**.
+This repository contains the source code for the lessons:
 
-The lesson is written in Spanish, but this repository and its code are presented in English to ensure wider accessibility and usability across international and multilingual audiences.
+- [**"Creating a Basic Project in Swift"**](https://dibs.pages.dev/docs/build-systems/init/swift)
+- [**"Configuring Multi-Module Projects in Swift"**](https://dibs.pages.dev/docs/build-systems/basic-config/swift)
 
-The lesson walks through how to install Swift, initialize a project using Swift Package Manager (SwiftPM), and run a simple terminal-based application — no Xcode required.
+Both are part of the course **Software Library Design and Implementation (Diseño e Implementación de Bibliotecas de Software, DIBS)**.
 
-The code prints a small tribute to *Uzumaki* by Junji Ito:
+While the lessons are written in Spanish, the repository and source code are in English to ensure broader accessibility and usability across international and multilingual audiences.
 
-```
-Spirals.... this town is contaminated with spirals.
-```
+## 🌱 Lesson Overview
+
+The **first lesson** walks you through:
+
+- Installing Swift on Windows, macOS, or Linux.
+- Initializing a new project with Swift Package Manager (SwiftPM).
+- Running a simple terminal-based app — no Xcode required.
+
+The **second lesson** builds on this foundation and teaches you how to:
+
+- Organize code into multiple reusable modules (called *targets* in SwiftPM).
+- Declare internal dependencies and products in `Package.swift`.
+- Follow SwiftPM’s folder conventions (`Sources/`, `Tests/`).
+- Prepare your codebase for scalable and maintainable library development.
 
 ## 🚀 How to Run
 
 To run the application:
 
-1. Make sure you have Swift installed. You can check it with:
+1. Make sure you have Swift installed. You can check with:
 
     ```bash
     swift --version
@@ -32,7 +44,7 @@ To run the application:
 3. Run the app:
 
     ```bash
-    swift run
+    swift run App
     ```
 
 You should see output like this:
@@ -40,34 +52,38 @@ You should see output like this:
 ```
 Building for debugging...
 [8/8] Linking .build/...
-Build of product 'echo-app-swift' complete!
+Build of product 'App' complete!
 Spirals.... this town is contaminated with spirals.
 ```
 
-## 🧱 Project Structure
+## 🧱 Project Structure (Multi-Module)
 
 ```text
 echo-app-swift/
-├── .build/               # Build artifacts and caches
+├── Package.swift         # Project configuration: products and modules
 ├── Sources/
-│   └── main.swift    # Entry point of the application
-├── Package.swift         # Project configuration file
-└── .gitignore
+│   ├── App/              # Executable target
+│   │   └── main.swift
+│   └── Lib/              # Library target
+│       └── Echo.swift
+├── Tests/
+│   └── LibTests/         # Unit tests for Lib
+│       └── EchoTests.swift
+└── .build/               # Build artifacts and cache
 ```
 
-## 📚 Related Lesson
+## 📚 Related Lessons
 
-You can follow the full step-by-step lesson (in Spanish) here:
+> 📘 [Creating a Basic Project in Swift](https://dibs.pages.dev/docs/build-systems/init/swift)  
+> 📦 [Configuring Multi-Module Projects in Swift](https://dibs.pages.dev/docs/build-systems/basic-config/swift)
 
-> [Creando un Proyecto Básico en Swift](https://dibs.pages.dev/docs/build-systems/init/swift)
-
-The lesson explains how to install Swift on Windows, macOS, and Linux, initialize the project using SwiftPM, and modify the default file to customize the output.
+These lessons are part of the **DIBS** course and aim to teach practical techniques for organizing Swift projects using SwiftPM, particularly with a focus on building **modular and reusable libraries**.
 
 ## 🌀 About the Message
 
-The printed message is a small homage to *Uzumaki*, a horror manga by Junji Ito, where spirals take over a small town. The message demonstrates how to replace Swift's default `Hello, world!` and serves as a first hands-on exercise with Swift from the command line.
+The printed message is a small homage to *Uzumaki*, a horror manga by Junji Ito, where spirals gradually overtake a small town. It demonstrates how to customize the default "Hello, World!" and provides a gentle first contact with the Swift CLI toolchain.
 
 ## 🛠️ Requirements
 
-- Swift 5.9 or later
+- Swift 6.0 or later
 - Terminal / Command Prompt / Shell access

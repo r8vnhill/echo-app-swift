@@ -19,7 +19,7 @@
             "preLaunchTask": "swift: Build Release EchoAppSwift"
         },
         {
-            "type": "lldb",
+            "type": "swift",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:Swift}",
@@ -28,7 +28,7 @@
             "preLaunchTask": "swift: Build Debug App"
         },
         {
-            "type": "lldb",
+            "type": "swift",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:Swift}",
